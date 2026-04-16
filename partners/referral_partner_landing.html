@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Referral Partner Program | Elijah Mang</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #1a2e4a;
+      --navy-dark: #122038;
+      --navy-light: #223a5e;
+      --gold: #c9a84c;
+      --gold-hover: #b8943e;
+      --white: #ffffff;
+      --off-white: #f5f6f8;
+      --gray: #6b7280;
+      --gray-light: #e5e7eb;
+      --text: #2d3748;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background-color: var(--white);
+      color: var(--navy);
+      line-height: 1.7;
+    }
+
+    /* --- HEADER --- */
+    header {
+      background-color: var(--navy-dark);
+      padding: 14px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .header-logo {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .header-cta {
+      display: inline-block;
+      background-color: var(--gold);
+      color: var(--navy-dark);
+      text-decoration: none;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.78rem;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .header-cta:hover {
+      background-color: var(--gold-hover);
+    }
+
+    /* --- HERO --- */
+    .hero {
+      background-color: var(--navy);
+      background-image: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-light) 100%);
+      padding: 96px 48px 104px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      font-weight: normal;
+      max-width: 740px;
+      margin: 0 auto 26px;
+      line-height: 1.3;
+    }
+
+    .hero h1 .line-gold {
+      display: block;
+      color: var(--gold);
+    }
+
+    .hero h1 .line-white {
+      display: block;
+      color: var(--white);
+    }
+
+    .hero-sub {
+      color: rgba(255,255,255,0.72);
+      font-size: 1.05rem;
+      max-width: 580px;
+      margin: 0 auto 44px;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.75;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background-color: var(--gold);
+      color: var(--navy-dark);
+      text-decoration: none;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 17px 40px;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .cta-btn:hover {
+      background-color: var(--gold-hover);
+    }
+
+    /* --- SECTIONS --- */
+    section {
+      padding: 80px 48px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: clamp(1.35rem, 2.5vw, 2rem);
+      font-weight: normal;
+      color: var(--navy);
+      margin-bottom: 22px;
+      line-height: 1.35;
+    }
+
+    p {
+      font-family: 'Arial', sans-serif;
+      color: var(--text);
+      font-size: 1rem;
+      margin-bottom: 16px;
+      line-height: 1.75;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* --- HOW IT WORKS --- */
+    .how-it-works {
+      background-color: var(--off-white);
+      border-top: 1px solid var(--gray-light);
+      border-bottom: 1px solid var(--gray-light);
+      max-width: 100%;
+      padding: 80px 48px;
+    }
+
+    .how-it-works-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* --- BENEFITS --- */
+    .benefits-list {
+      list-style: none;
+      margin-top: 32px;
+    }
+
+    .benefits-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--gray-light);
+      font-family: 'Arial', sans-serif;
+      font-size: 0.975rem;
+      color: var(--text);
+    }
+
+    .benefits-list li:last-child {
+      border-bottom: none;
+    }
+
+    .benefit-icon {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background-color: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .benefit-icon svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--navy-dark);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .benefit-text strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+
+    /* --- WHO I WORK WITH --- */
+    .client-section {
+      background-color: var(--navy);
+      background-image: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-light) 100%);
+      padding: 80px 48px;
+      position: relative;
+    }
+
+    .client-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .client-section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .client-section .section-label {
+      color: rgba(201,168,76,0.8);
+    }
+
+    .client-section h2 {
+      color: var(--white);
+    }
+
+    .client-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .client-card {
+      background-color: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-top: 3px solid var(--gold);
+      padding: 36px 32px;
+      border-radius: 2px;
+    }
+
+    .client-card h3 {
+      font-size: 1.05rem;
+      font-weight: normal;
+      color: var(--white);
+      margin-bottom: 14px;
+      letter-spacing: 0.01em;
+    }
+
+    .client-card p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* --- ABOUT --- */
+    .about-section {
+      background-color: var(--off-white);
+      border-top: 1px solid var(--gray-light);
+      border-bottom: 1px solid var(--gray-light);
+      padding: 80px 48px;
+    }
+
+    .about-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .about-photo-col {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .about-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--gold);
+    }
+
+    .about-signature {
+      width: 180px;
+      height: auto;
+    }
+
+    .about-text .section-label {
+      margin-bottom: 12px;
+    }
+
+    .about-text h2 {
+      margin-bottom: 12px;
+    }
+
+    .about-credibility {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-bottom: 16px;
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* --- CTA SECTION --- */
+    .cta-section {
+      background-color: var(--navy);
+      background-image: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-light) 100%);
+      padding: 88px 48px;
+      text-align: center;
+      position: relative;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .cta-section h2 {
+      color: var(--white);
+      max-width: 600px;
+      margin: 0 auto 14px;
+    }
+
+    .cta-section > p {
+      color: rgba(255,255,255,0.65);
+      max-width: 500px;
+      margin: 0 auto 44px;
+    }
+
+    .calendar-wrap {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .calendar-wrap iframe {
+      width: 100%;
+      max-width: 720px;
+      border: none;
+      overflow: hidden;
+      min-height: 680px;
+      border-radius: 4px;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background-color: var(--navy-dark);
+      border-top: 1px solid rgba(201,168,76,0.2);
+      padding: 36px 48px;
+      text-align: center;
+    }
+
+    .footer-name {
+      color: var(--white);
+      font-size: 1rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-details {
+      color: rgba(255,255,255,0.45);
+      font-family: 'Arial', sans-serif;
+      font-size: 0.8rem;
+      line-height: 1.9;
+    }
+
+    .footer-details a {
+      color: rgba(201,168,76,0.7);
+      text-decoration: none;
+    }
+
+    .footer-details a:hover {
+      color: var(--gold);
+    }
+
+    /* --- MOBILE --- */
+    @media (max-width: 680px) {
+      header {
+        padding: 12px 20px;
+      }
+
+      .header-logo {
+        height: 36px;
+      }
+
+      .hero {
+        padding: 60px 24px 68px;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.6rem, 6vw, 2rem);
+      }
+
+    }
+
+    @media (max-width: 768px) {
+      .hero .cta-btn {
+        display: inline-block !important;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        white-space: nowrap !important;
+        padding: 16px 32px !important;
+      }
+
+      section {
+        padding: 52px 24px;
+      }
+
+      .how-it-works {
+        padding: 52px 24px;
+      }
+
+      .client-section {
+        padding: 52px 24px;
+      }
+
+      .client-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .client-card {
+        padding: 28px 24px;
+      }
+
+      .about-section {
+        padding: 52px 24px;
+      }
+
+      .about-inner {
+        flex-direction: column;
+        gap: 28px;
+        text-align: center;
+      }
+
+      .about-credibility {
+        justify-content: center;
+      }
+
+      .cta-section {
+        padding: 60px 24px;
+      }
+
+      .calendar-wrap iframe {
+        min-height: 700px;
+      }
+
+      footer {
+        padding: 28px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img
+      src="https://res.cloudinary.com/dmxikek4k/image/upload/v1773354600/Elijah_Mang_2000_x_1000_px_4_orsgnr.png"
+      alt="The Peoples Insurance"
+      class="header-logo"
+    >
+    <a href="#book" class="header-cta">Book a Call</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>
+      <span class="line-gold">Your clients need life insurance.</span>
+      <span class="line-white">You should be the one who connects them to it.</span>
+    </h1>
+    <p class="hero-sub">A simple, low-friction referral arrangement that adds value for your clients and creates a reciprocal relationship that works both ways.</p>
+    <a href="#book" class="cta-btn">Schedule a 15-Minute Intro Call</a>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <div class="how-it-works">
+    <div class="how-it-works-inner">
+      <div class="section-label">How It Works</div>
+      <h2>Simple, low-maintenance, and built around your existing relationships.</h2>
+      <p>When a client of yours is buying a home, closing on an investment property, or building a business, there is almost always a conversation worth having about protecting and leveraging what they are building. You make the introduction. I handle everything from there.</p>
+      <p>In return, I actively work to add value back to you, whether that is referrals when they come up naturally, direct compensation through a formal arrangement, or both. We can talk through what makes the most sense on our call.</p>
+    </div>
+  </div>
+
+  <!-- BENEFITS -->
+  <section>
+    <div class="section-label">What You Get</div>
+    <h2>Why agents and loan officers work with me.</h2>
+
+    <ul class="benefits-list">
+      <li>
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="benefit-text">
+          <strong>A resource for your clients</strong>
+          Your clients get guidance on protection at the right moment. You look more thorough and add more value without adding to your workload.
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="benefit-text">
+          <strong>Higher trust conversations</strong>
+          A warm referral from you carries weight. Clients arrive ready to listen, not guarded.
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="benefit-text">
+          <strong>Value that goes both ways</strong>
+          Your clients get a trusted resource which builds loyalty and makes you look good. How I can structure even more value back to you is something we can dial in together on the call.
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="benefit-text">
+          <strong>I handle everything on the insurance side</strong>
+          Strategy, illustrations, follow-up, placement. You make the introduction and I take it from there.
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- WHO I WORK WITH -->
+  <div class="client-section">
+    <div class="client-section-inner">
+      <div class="section-label">Who I Work With</div>
+      <h2>Clients who are building something worth protecting.</h2>
+
+      <div class="client-grid">
+        <div class="client-card">
+          <h3>Homebuyers</h3>
+          <p>New homeowners taking on their largest financial liability. Often the first real conversation about protection they have ever had. The right coverage at closing protects the mortgage, the family, and everything they are building toward.</p>
+        </div>
+        <div class="client-card">
+          <h3>Real Estate Investors</h3>
+          <p>Portfolio builders accumulating equity across multiple properties. The conversation is not just about what happens at death. It is about creating a tax-advantaged liquidity layer that grows alongside the portfolio, funds future acquisitions, and protects heirs from forced sales or tax bills they cannot cover.</p>
+        </div>
+        <div class="client-card">
+          <h3>Business Owners</h3>
+          <p>Owners with wealth tied up in the business and no efficient way to move it, protect it, or transfer it. Key person coverage, buy-sell funding, and tax-advantaged wealth accumulation all in one structure. The business keeps running if something happens, and the owner builds a permanent asset alongside it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="about-section">
+    <div class="about-inner">
+      <div class="about-text">
+        <div class="section-label">About Me</div>
+        <h2>I specialize in working with the clients your business already serves.</h2>
+        <div class="about-credibility">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span>5.0 stars across 182+ Google reviews &nbsp;|&nbsp; Licensed across 50 states</span>
+        </div>
+        <p>My job is to make sure they are protected, and to make you look good in the process. Working with homeowners, families, real estate investors, and business owners across the country.</p>
+      </div>
+      <div class="about-photo-col">
+        <img
+          src="https://res.cloudinary.com/dmxikek4k/image/upload/v1773356599/AI_Headshot_qtxc42.jpg"
+          alt="Elijah Mang"
+          class="about-photo"
+        >
+        <img
+          src="https://res.cloudinary.com/dmxikek4k/image/upload/v1776014491/Elijah_Mang_2000_x_1000_px_5_c5agcz.png"
+          alt="Elijah Mang signature"
+          class="about-signature"
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section" id="book">
+    <h2>Let's spend 15 minutes to see if it makes sense.</h2>
+
+    <div class="calendar-wrap">
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/booking/agW6VF8tU4fvUspJja4I"
+        scrolling="no"
+        id="P6zbuuawVQBrQWdThYI7_1776010449117"
+      ></iframe>
+    </div>
+    <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-name">Elijah Mang</div>
+    <div class="footer-details">
+      Licensed Life Insurance Advisor &nbsp;|&nbsp; The Peoples Insurance Co.<br>
+      Licensed across 50 States<br>
+      <a href="mailto:elijah@tpicares.com">elijah@tpicares.com</a>
+    </div>
+  </footer>
+
+</body>
+</html>
